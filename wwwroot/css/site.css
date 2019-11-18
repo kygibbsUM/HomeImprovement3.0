@@ -1333,3 +1333,8 @@ a.scrollup {
         background-color: #ddd;
         color: rgb(8, 164, 255);
     }
+
+
+option {
+    margin: 0.5em;
+}
