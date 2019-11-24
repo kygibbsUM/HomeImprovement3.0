@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Test Driver</title>
+    <script src="CalculatorUltra.js"></script>
+</head>
+<body>
+    <h3> There should be some examples of the javascript stuff working here.</h3>
+    <p>Setting shingle price to 25.00, paint price to 30.00, shinlge coverage to 33.3, paint coverage to 350.</p>
+    <script>
+        shinglePrice = 25.00;
+        paintPrice = 30.00;
+        shingleCoverage = 33.3;
+        paintCoverage = 350;
+    </script>
+    <p>Setting roof size to 100 x 150, rise and run to 8 and 12, and room size to 12 x 13 x 8</p>
+    <script>
+        roofX = 100;
+        roofY = 150;
+        roomX = 12;
+        roomY = 13;
+        roomZ = 8;
+        roofRise = 8;
+        roofRun = 12;
+    </script>
+    <p>Testing to see if this stuff actually works.</p>
+    <script>
+        calculateRoomArea(roomX, roomY, roomZ);
+        calculatePaintPrice(paintArea, paintPrice);
+        calculateRoofPitch(roofRise, roofRun);
+        calculateRoof(roofX, roofY, roofPitch);
+        calculateRoofPrice(shingleBundles, shinglePrice);
+    </script>
+    <p>roof pitch should be
+    <script>document.write(roofPitch);</script></p>
+    <p>roof area should be
+    <script>document.write(roofArea);</script></p>
+    <p>room area should be
+    <script>document.write(paintArea);</script></p>
+    <p>paint price should be $<script>document.write(paintTotalPrice);</script></p>
+    <p>bundles of shingles needed should be should be <script>document.write(shingleBundles);</script></p>
+    <p>roof price should be $<script>document.write(totalRoofPrice);</script></p>
+
+</body>
+</html>
