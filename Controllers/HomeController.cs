@@ -32,6 +32,10 @@ namespace HomeImprovement3._0.Controllers
             return View();
 
         }
+        public IActionResult About()
+        {
+            return View();
+        }
 
         public IActionResult Contact()
         {
