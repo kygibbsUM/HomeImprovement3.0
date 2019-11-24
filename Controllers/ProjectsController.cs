@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using HomeImprovement3._0.Data;
 using HomeImprovement3._0.Models;
 
-namespace MVCMovie.Controllers
+namespace HomeImprovement.Controllers
 {
     public class ProjectsController : Controller
     {
@@ -19,7 +19,7 @@ namespace MVCMovie.Controllers
             _context = context;
         }
 
-        // GET: Movies
+        // GET: Projects
         public async Task<IActionResult> Index()
         {
             return View(await _context.Project.ToListAsync());
@@ -82,7 +82,7 @@ namespace MVCMovie.Controllers
             return View(project);
         }
 
-        // POST: Movies/Edit/5
+        // POST: Projects/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -140,8 +140,9 @@ namespace MVCMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await _context.Project.FindAsync(id);
-            _context.Project.Remove(movie);
+            
+            var project = await _context.Project.FindAsync(id);
+            _context.Project.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

@@ -4,14 +4,16 @@ using HomeImprovement3._0.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HomeImprovement3._0.Migrations
 {
     [DbContext(typeof(MvcProjectContext))]
-    partial class MvcProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20191124175645_DisplayUpdate")]
+    partial class DisplayUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,9 +30,6 @@ namespace HomeImprovement3._0.Migrations
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18, 2)");
-
-                    b.Property<int>("CreatedByID")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
