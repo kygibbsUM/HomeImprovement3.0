@@ -138,10 +138,10 @@
             box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
         }
 
-            .carousel-indicators li.active {
-                background: #555;
-                box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
-            }
+        .carousel-indicators li.active {
+            background: #555;
+            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 
@@ -217,12 +217,7 @@
             <div class="col-md-8 col-center m-auto">
                 <h2>Testimonials</h2>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Carousel indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
+
                     <!-- Wrapper for carousel items -->
                     <div class="carousel-inner">
                         <div class="item carousel-item active">
@@ -248,6 +243,12 @@
                     <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                         <i class="fa fa-angle-right"></i>
                     </a>
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators" style="position:relative">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -258,10 +259,10 @@
         </p>
     </div>
     <div class="lates">
-        <div class="container d-md-block" style="display:block;">
-            <div class="text-center">
-                <h2>Latest News</h2>
-            </div>
+        <div class="text-center">
+            <h2>Latest News</h2>
+        </div>
+        <div style="display:flex;">
             <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <img src="images/4.jpg" class="img-responsive" />
                 <h3>Choose a Project</h3>
