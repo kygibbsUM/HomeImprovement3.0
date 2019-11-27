@@ -419,8 +419,8 @@ a {
     margin-top: 70px;
     margin-bottom: 30px;
     color: #fff;
-    padding: 50px;
-    background: rgb(8, 164, 255);
+    padding: 30px;
+    background: rgba(8, 164, 255, 0.46);
     border-radius: 50%;
 }
 
@@ -1351,7 +1351,7 @@ html {
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: content-box;
 }
 
 body {
@@ -1520,11 +1520,11 @@ label {
 /*basic reset*/
 
 
-calchtml {
+#calchtml {
     height: 100%;
     /*Image only BG fallback*/
     /*background = gradient + image pattern combo*/
-    background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+    background: linear-gradient(rgba(1, 106, 255, 0.39), rgba(218, 68, 41, 0.33));
 }
 
 /*body {
@@ -1707,7 +1707,7 @@ ul {
 }
 
 a {
-    color: #e95846;
+    color: rgba(3, 107, 255, 0.45);
     text-decoration: none;
 }
 
@@ -1715,7 +1715,7 @@ a {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 2.6em;
-    color: #FFF;
+    color: #333;
     margin-top: 15px;
     text-align: left;
     margin-bottom: 25px;
@@ -1742,9 +1742,9 @@ a {
 }
 
 .pricing-table {
-    margin: 0 10px;
+    margin: 0 50px;
     text-align: center;
-    width: 300px;
+    width: 220px;
     float: left;
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.4);
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
@@ -1761,10 +1761,10 @@ a {
     }
 
 .pricing-title {
-    color: #FFF;
-    background: #e95846;
+    color: #000;
+    background: rgba(233, 88, 70, 0.54);
     padding: 20px 0;
-    font-size: 2em;
+    font-size: 1em;
     text-transform: uppercase;
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 }
@@ -1778,9 +1778,9 @@ a {
 }
 
 .pricing-table .price {
-    background: #403e3d;
-    font-size: 3.4em;
-    font-weight: 700;
+    background: rgba(236, 236, 236, 0.79);
+    font-size: 2.4em;
+    text-align:center;
     padding: 20px 0;
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 }
@@ -1797,8 +1797,8 @@ a {
 }
 
     .table-list li {
-        font-size: 1.4em;
-        font-weight: 700;
+        font-size: 1em;
+        font-weight: 70;
         padding: 12px 8px;
     }
 
@@ -1912,6 +1912,7 @@ a {
     }
 }
 
-
-
-Resources1×0.5×0.25×Rerun
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}

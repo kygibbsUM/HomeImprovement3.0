@@ -41,6 +41,10 @@ namespace HomeImprovement3._0.Controllers
         {
             return View();
         }
+        public IActionResult premium()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
