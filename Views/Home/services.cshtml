@@ -1,5 +1,7 @@
-﻿@model HomeImprovement3._0.Models.Project
-
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
 
 }
@@ -12,547 +14,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Improvements</title>
 
-    <!-- Bootstrap -->
-
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     @*<link href="css/site.css" rel="stylesheet" />*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">
-    <!-- =======================================================
-      Theme Name: Company
-      Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">*@
+    @*<link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">*@
+    <link href="css/addons-pro/steppers.css" rel="stylesheet">
+    <!-- Stepper CSS - minified-->
+    <link href="css/addons-pro/steppers.min.css" rel="stylesheet">
 </head>
 
-<body onload="hideFields()">
+<body>
     <div class="container my-5">
         <!--Section: Content-->
-        <section class="dark-grey-text text-center">
+        <section class="dark-grey-text  ">
 
             <h6 class="font-weight-normal text-uppercase font-small grey-text mb-4">Features</h6>
             <!-- Section heading -->
-            <h3 class="font-weight-bold black-text mb-4 pb-2">Unique Factors</h3>
-            <hr class="w-header">
-            <!-- Section description -->
-            <p class="lead text-muted mx-auto mt-4 pt-2 mb-5">It's really easy to create a landing page for your awesome product.</p>
-
-            <!--First row-->
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-md-3 mb-4">
-
-                    <!-- Card -->
-                    <a href="#!" class="card hoverable">
-
-                        <!-- Card content -->
-                        <div class="card-body my-4">
-
-                            <p><i class="fas fa-tablet-alt fa-2x text-muted"></i></p>
-                            <h5 class="black-text mb-0">Save Time Online!</h5>
-
-                        </div>
-
-                    </a>
-                    <!-- Card -->
-
-                </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-md-3 mb-4">
-
-                    <!-- Card -->
-                    <a href="#!" class="card hoverable">
-
-                        <!-- Card content -->
-                        <div class="card-body my-4">
-
-                            <p><i class="fas fa-cogs fa-2x text-muted"></i></p>
-                            <h5 class="black-text mb-0">Customize your Project</h5>
-
-                        </div>
-
-                    </a>
-                    <!-- Card -->
-
-                </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-md-3 mb-4">
-
-                    <!-- Card -->
-                    <a href="#!" class="card hoverable">
-
-                        <!-- Card content -->
-                        <div class="card-body my-4">
-
-                            <p><i class="fas fa-recycle fa-2x text-muted"></i></p>
-                            <h5 class="black-text mb-0">Save Energy and Reuse</h5>
-
-                        </div>
-
-                    </a>
-                    <!-- Card -->
-
-                </div>
-                <!--Grid column-->
-
+            <div class="jumbotron hero-nature">
+                <h1 class="hero-title">Our Services!</h1>
             </div>
+
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/blog/gallery4.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Save Time!</h5>
+                        <p class="card-text">No need to waste time making all the calls. We know your time is precious!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="~/images/portfolio/recent/item9.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">All Online!</h5>
+                        <p class="card-text">One click and you get the ultimate price.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="~/images/portfolio/recent/item7.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">THe best consulation!</h5>
+                        <p class="card-text">Your home is our work and we take it seriously!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+
             <!--First row-->
 
         </section>
 
-
     </div>
 
-    <!-- This is the Calculator ZONE-->
+    @*Attempted Calculator Front End*@
+    <a role="presentation" class="btn-primary animation animated-item-3" asp-controller="Home" asp-action="calculator"><b>Calculate Now!</b></a>
+
+
+    <!-- THis is the Calculator ZONE-->
     <div class="row">
-        <div class="col-md-4 col-centered" id="calchtml">
-            <form asp-controller="Projects" asp-action="Create">
-
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" placeholder="Project Name" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Type" class="control-label"></label>
-                    <select asp-for="Type" class="form-control" id="typeBox" onchange="showFields()" placeholder="Project Type">
-                        <option value="none"></option>
-                        <option value="Roofing">Roofing</option>
-                        <option value="Flooring">Flooring</option>
-                        <option value="Painting">Painting</option>
-                    </select>
-                    <span asp-validation-for="Type" class="text-danger"></span>
-                </div>
-
-                @* Fields for all of the calculators, these will all be hidden at the start - KG *@
-                <input type="text" id="field1" placeholder="Length" />
-                <input type="text" id="field2" placeholder="Breadth" />
-                <input type="text" id="field3" placeholder="Rise" />
-                <input type="text" id="field4" placeholder="Run" />
-                <input type="text" id="field5" placeholder="Price" />
-
-                <input type="text" id="paintWidth" placeholder="Width of Walls" />
-                <input type="text" id="paintHeight" placeholder="Height of Walls" />
-                <input type="text" id="paintWalls" placeholder="Number of Walls" />
-
-                <input type="text" id="floorWidth" placeholder="Width of Floor" />
-                <input type="text" id="floorHeight" placeholder="Height of Floor" />
-
-                @* Gotta style this button to make it not look like garbage - KG *@
+        <div class="col-md-4 col-centered" id="msform">
+            <form asp-action="Create">
                 <div>
-                    <button id="click">Calculate</button>
+                    <input class="text-black-50" type="text" id="projName" placeholder="Project Name" />
+                </div>
+                <div class="col-xs-6 d-md-inline">
+                    <select class="form-control" name="select1" id="select1">
+                        <option value="1">Bathroom</option>
+                        <option value="2">Roof</option>
+                        <option value="3">Kitchen</option>
+                        <option value="4">Floor</option>
+                        <option value="4">Walls</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <select class="form-control" name="select2" id="select2">
+                        <option value="1">5 X 8</option>
+                        <option value="1">6 X 6</option>
+                        <option value="1">5 X 9</option>
+
+                        <option value="2">20 X 40</option>
+                        <option value="2">30 X 40</option>
+                        <option value="2">40 X 50</option>
+                        <option value="2">60 X 70</option>
+
+                        <option value="3">50 X 40</option>
+                        <option value="3">40 X 50</option>
+                        <option value="4">40 X 40</option>
+                        <option value="4">50 X 40</option>
+                        <option value="4">40 X 50</option>
+
+                    </select>
+
+
                 </div>
 
-                <script type="text/javascript">
-                    let button = document.getElementById("click");
-                    button.addEventListener("click", (event) => {
-                        event.preventDefault();
-                        chooseCalculation();
-                    })
+                <div>
 
-                    function hideFields() {
-                        //When the page loads, hide all fields until the user picks a job. Then display the
-                        //ones they will need.
-                        document.getElementById("field1").style.visibility = "hidden";
-                        document.getElementById("field2").style.visibility = "hidden";
-                        document.getElementById("field3").style.visibility = "hidden";
-                        document.getElementById("field4").style.visibility = "hidden";
-                        document.getElementById("field5").style.visibility = "hidden";
+                    <input type="text" id="field1" placeholder="Length" />
+                    <input type="text" id="field2" placeholder="Breadth" />
+                    <input type="text" id="field3" placeholder="Rise" />
+                    <input type="text" id="field4" placeholder="Run" />
+                    <input type="text" id="field5" placeholder="Price" />
+                    <button id="click" class="btn-outline-primary">Calculate</button>
 
-                        document.getElementById("paintWidth").style.visibility = "hidden";
-                        document.getElementById("paintHeight").style.visibility = "hidden";
-                        document.getElementById("paintWalls").style.visibility = "hidden";
+                    <p id="demo"> </p>
 
-                        //Are these labeled correctly? Feel free to change them - KG
-                        document.getElementById("floorWidth").style.visibility = "hidden"; 
-                        document.getElementById("floorHeight").style.visibility = "hidden";
-                    }
+                    <script type="text/javascript">
+                        let globalTotal = 0.0; //This variable is me trying to find out why it's not displaying properly.
+                        let button = document.getElementById("click");
+                        button.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            finalRoofCalculation();
+                        })
 
-                    function showFields() {
-                        let jobBox = document.getElementById("typeBox");
-                        let jobSelection = jobBox.options[jobBox.selectedIndex].value;
+                        function finalRoofCalculation(event) {
+                            var field1 = document.getElementById("field1").value;
+                            var field2 = document.getElementById("field2").value;
+                            var field3 = document.getElementById("field3").value;
+                            var field4 = document.getElementById("field4").value;
+                            var field5 = document.getElementById("field5").value;
+                            field1 = parseFloat(field1);
+                            field2 = parseFloat(field2);
+                            field3 = parseFloat(field3);
+                            field4 = parseFloat(field4);
+                            field5 = parseFloat(field5);
 
-                        switch (jobSelection) {
-                            case "Painting":
-                                document.getElementById("paintWidth").style.visibility = "visible";
-                                document.getElementById("paintHeight").style.visibility = "visible";
-                                document.getElementById("paintWalls").style.visibility = "visible";
+                            var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
+                            var roofPitch = parseFloat(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
+                            var roofArea = parseFloat(field1 * field2 * roofPitch);
+                            var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
 
-                                document.getElementById("field1").style.visibility = "hidden";
-                                document.getElementById("field2").style.visibility = "hidden";
-                                document.getElementById("field3").style.visibility = "hidden";
-                                document.getElementById("field4").style.visibility = "hidden";
-                                document.getElementById("field5").style.visibility = "hidden";
+                            let total = shingleBundles * field5;
 
-                                document.getElementById("floorWidth").style.visibility = "hidden"; 
-                                document.getElementById("floorHeight").style.visibility = "hidden";
-                                console.log("Painting");
-                                break;
-
-                            case "Roofing":
-                                document.getElementById("field1").style.visibility = "visible";
-                                document.getElementById("field2").style.visibility = "visible";
-                                document.getElementById("field3").style.visibility = "visible";
-                                document.getElementById("field4").style.visibility = "visible";
-                                document.getElementById("field5").style.visibility = "visible";
-
-                                document.getElementById("paintWidth").style.visibility = "hidden";
-                                document.getElementById("paintHeight").style.visibility = "hidden";
-                                document.getElementById("paintWalls").style.visibility = "hidden";
-
-                                document.getElementById("floorWidth").style.visibility = "hidden"; 
-                                document.getElementById("floorHeight").style.visibility = "hidden";
-                                console.log("Roofing");
-                                break;
-
-                            case "Flooring":
-                                document.getElementById("floorWidth").style.visibility = "visible"; 
-                                document.getElementById("floorHeight").style.visibility = "visible";
-
-                                document.getElementById("field1").style.visibility = "hidden";
-                                document.getElementById("field2").style.visibility = "hidden";
-                                document.getElementById("field3").style.visibility = "hidden";
-                                document.getElementById("field4").style.visibility = "hidden";
-                                document.getElementById("field5").style.visibility = "hidden";
-
-                                document.getElementById("paintWidth").style.visibility = "hidden";
-                                document.getElementById("paintHeight").style.visibility = "hidden";
-                                document.getElementById("paintWalls").style.visibility = "hidden";
-
-                                break;
-                            default:
-                                console.log("default");
-                                break;
-                        }
-                    }
-
-                    function chooseCalculation() {
-                        let jobBox = document.getElementById("typeBox");
-                        let jobSelection = jobBox.options[jobBox.selectedIndex].value;
-
-                        switch (jobSelection) {
-                            case "Painting":
-                                paintingCalculation();
-                                break;
-
-                            case "Roofing":
-                                roofingCalculation();
-                                break;
-
-                            case "Flooring":
-                                flooringCalculation();
-                                break;
-
-                            default:
-                                break;
+                            //console.log(total);
+                            let totalBox = document.getElementById("totalBox");
+                            totalBox.value = total;
+                            console.log(total);
                         }
 
-                    }
+                    </script>
 
-                    function flooringCalculation(){
-                        let total = 1 + 1;
-                        let totalBox = document.getElementById("totalBox");
-                        totalBox.value = total;
-                        totalBox.readOnly = true;
-                    }
-
-                    function paintingCalculation() {
-                        let total = 2 + 2;
-                        let totalBox = document.getElementById("totalBox");
-                        totalBox.value = total;
-                        totalBox.readOnly = true;
-                    }
-                    
-                    function roofingCalculation() {
-                        var field1 = document.getElementById("field1").value;
-                        var field2 = document.getElementById("field2").value;
-                        var field3 = document.getElementById("field3").value;
-                        var field4 = document.getElementById("field4").value;
-                        var field5 = document.getElementById("field5").value;
-
-                        field1 = parseFloat(field1);
-                        field2 = parseFloat(field2);
-                        field3 = parseFloat(field3);
-                        field4 = parseFloat(field4);
-                        field5 = parseFloat(field5);
-
-                        var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
-                        var roofPitch = parseFloat(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
-                        var roofArea = parseFloat(field1 * field2 * roofPitch);
-                        var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
-
-                        let total = shingleBundles * field5;
-                        let totalBox = document.getElementById("totalBox");
-                        totalBox.value = total;
-                        totalBox.readOnly = true;
-                    }
-
-                </script>
-
-                <div class="form-group" id="totalArea">
-                    <label asp-for="Cost" class="control-label"></label>
-                    <input asp-for="Cost" class="form-control" id="totalBox" placeholder="Final Price" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <div id="totalArea">
+                        The total should be
+                        <input id="totalBox" type="text" />
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+
+
+
+
+                <div>
+                    @*This button should save and send to database*@
+                    <button type="submit" class="btn-secondary">Save and Submit</button>
                 </div>
+
             </form>
         </div>
-    </div>
-
-    <!-- END CALCULATOR ZONE-->
-
-    <script>
-        //jQuery time
-        var current_fs, next_fs, previous_fs; //fieldsets
-        var left, opacity, scale; //fieldset properties which we will animate
-        var animating; //flag to prevent quick multi-click glitches
-
-        $(".next").click(function () {
-            if (animating) return false;
-            animating = true;
-
-            current_fs = $(this).parent();
-            next_fs = $(this).parent().next();
-
-            //activate next step on progressbar using the index of next_fs
-            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-            //show the next fieldset
-            next_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({
-                opacity: 0
-            }, {
-                step: function (now, mx) {
-                    //as the opacity of current_fs reduces to 0 - stored in "now"
-                    //1. scale current_fs down to 80%
-                    scale = 1 - (1 - now) * 0.2;
-                    //2. bring next_fs from the right(50%)
-                    left = (now * 50) + "%";
-                    //3. increase opacity of next_fs to 1 as it moves in
-                    opacity = 1 - now;
-                    current_fs.css({
-                        'transform': 'scale(' + scale + ')',
-                        'position': 'absolute'
-                    });
-                    next_fs.css({
-                        'left': left,
-                        'opacity': opacity
-                    });
-                },
-                duration: 800,
-                complete: function () {
-                    current_fs.hide();
-                    animating = false;
-                },
-                //this comes from the custom easing plugin
-                easing: 'easeInOutBack'
-            });
-        });
-
-        $(".previous").click(function () {
-            if (animating) return false;
-            animating = true;
-
-            current_fs = $(this).parent();
-            previous_fs = $(this).parent().prev();
-
-            //de-activate current step on progressbar
-            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-            //show the previous fieldset
-            previous_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({
-                opacity: 0
-            }, {
-                step: function (now, mx) {
-                    //as the opacity of current_fs reduces to 0 - stored in "now"
-                    //1. scale previous_fs from 80% to 100%
-                    scale = 0.8 + (1 - now) * 0.2;
-                    //2. take current_fs to the right(50%) - from 0%
-                    left = ((1 - now) * 50) + "%";
-                    //3. increase opacity of previous_fs to 1 as it moves in
-                    opacity = 1 - now;
-                    current_fs.css({
-                        'left': left
-                    });
-                    previous_fs.css({
-                        'transform': 'scale(' + scale + ')',
-                        'opacity': opacity
-                    });
-                },
-                duration: 800,
-                complete: function () {
-                    current_fs.hide();
-                    animating = false;
-                },
-                //this comes from the custom easing plugin
-                easing: 'easeInOutBack'
-            });
-        });
-
-        $(".submit").click(function () {
-            return false;
-        })
+        </div>
+   
 
 
-    </script>
 
 
     @*//< !--This is start of the Pricing-- >*@
-    <div class='price'>
+    <div class="price">
         <div class="pricing-wrapper clearfix">
-            <!-- Titulo -->
             <h1 class="pricing-table-title">Get Started with Premium Features </h1>
 
             <div class="pricing-table">
                 <h3 class="pricing-title">Basic</h3>
-                <div class="price">$60<sup>/ mes</sup></div>
-                <!-- Lista de Caracteristicas / Propiedades -->
+                <div class="price">$19.99<sup>/ month</sup></div>
                 <ul class="table-list">
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
+                    <li>10  <span>Analytic View</span></li>
+                    <li>100+  <span>Projects</span></li>
+                    <li>10  <span>Free Consulting</span></li>
+                    <li>5  <span>Project Recalls</span></li>
+                    <li>10  <span>Discounted Hardware Items </span></li>
+                   
                 </ul>
-                <!-- Contratar / Comprar -->
                 <div class="table-buy">
-                    <p>$60<sup>/ mes</sup></p>
+                    <p>$19.99<sup>/ month</sup></p>
                     <a href="#" class="pricing-action">Buy Now!</a>
                 </div>
             </div>
 
             <div class="pricing-table recommended">
                 <h3 class="pricing-title">Premium</h3>
-                <div class="price">$19.99<sup>/ month</sup></div>
-                <!-- Lista de Caracteristicas / Propiedades -->
-                <ul class="table-list">
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
+                <div class="price">$39.99<sup>/ month</sup></div>
+                 <ul class="table-list">
+                    <li>10  <span>Analytic View</span></li>
+                    <li>Unlimited  <span>Projects</span></li>
+                    <li>100  <span>Free Consulting</span></li>
+                    <li>50  <span>Project Recalls</span></li>
+                    <li>20  <span>Discounted Hardware Items </span></li>
+
                 </ul>
-                <!-- Contratar / Comprar -->
                 <div class="table-buy">
-                    <p>$69.99<sup>/ mes</sup></p>
+                    <p>$39.99<sup>/ mes</sup></p>
                     <a href="#" class="pricing-action">Buy Now!</a>
                 </div>
             </div>
 
             <div class="pricing-table">
                 <h3 class="pricing-title">Ultimate</h3>
-                <div class="price">$200<sup>/ month</sup></div>
-                <!-- Lista de Caracteristicas / Propiedades -->
-                <ul class="table-list">
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
+                <div class="price">$49.99<sup>/ month</sup></div>
+               <ul class="table-list">
+                    <li>10  <span>Analytic View</span></li>
+                    <li>Unlimited  <span>Projects</span></li>
+                    <li>Unlimited  <span>Free Consulting</span></li>
+                    <li>50  <span>Project Recalls</span></li>
+                    <li>30  <span>Discounted Hardware Items </span></li>
+
                 </ul>
-                <!-- Contratar / Comprar -->
-                <div class="table-buy">
-                    <p>$100<sup>/ month</sup></p>
+                 <div class="table-buy">
+                    <p>$49.99<sup>/ month</sup></p>
                     <a href="#" class="pricing-action">Buy Now!</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-3 mb-5">
-
-        <!-- Section -->
-        <section style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/full%20page/img%20(2).jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-
-            <style>
-                .input-grey .input-group-lg > .input-group-prepend > .input-group-text {
-                    border-radius: .125rem;
-                }
-
-                .input-grey .form-control {
-                    border-radius: .125rem;
-                }
-
-                    .input-grey .form-control.form-control-lg {
-                        font-size: 1rem;
-                    }
-
-                .form-control:focus {
-                    background-color: rgba(255,255,255,.3);
-                }
-
-                .input-grey input::placeholder {
-                    color: #fff;
-                }
-
-                .input-grey .input-group-lg > .form-control:not(textarea) {
-                    height: calc(1.5em + 1rem + 6px);
-                }
-
-                .social .fab {
-                    width: 30px;
-                    height: 30px;
-                }
-            </style>
-
-            <div class="mask rgba-black-strong py-5">
-
-                <div class="container text-center my-5">
-
-                    <h3 class="font-weight-bold text-center white-text pb-2">News and Updates</h3>
-                    <p class="lead text-center white-text pt-2 mb-5">
-                        Subscribe to our newsletter and receive the latest news
-                        from MDB.
-                    </p>
-
-                    <form class="input-grey mb-5" action="" method="post" target="_blank">
-                        <div class="form-row">
-                            <div class="col-md-4 ml-auto">
-                                <div class="input-group input-group-lg z-depth-1">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text rgba-white-light border-0"><i class="fa fa-envelope white-text"></i></span>
-                                    </div>
-                                    <input type="email" name="EMAIL" class="form-control form-control-lg rgba-white-light white-text border-0 z-depth-0" placeholder="Email Address">
-                                </div>
-                            </div>
-
-                            <div class="col-md-2 mr-auto">
-                                <button class="btn btn-block btn-primary">Subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <div class="social text-center">
-                        <a class="mx-1" href="#"><i class="fab fa-facebook-f p-2 rounded rgba-white-light white-text"></i></a>
-                        <a class="mx-1" href="#"><i class="fab fa-twitter p-2 rounded rgba-white-light white-text"></i></a>
-                        <a class="mx-1" href="#"><i class="fab fa-linkedin-in p-2 rounded rgba-white-light white-text"></i></a>
-                        <a class="mx-1" href="#"><i class="fab fa-instagram p-2 rounded rgba-white-light white-text"></i></a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-        <!-- Section -->
-
-    </div>
+ 
     <script>
         var $select1 = $('#select1'),
             $select2 = $('#select2'),
@@ -566,7 +251,9 @@
 
 
 
-
+    <script type="text/javascript" src="js/addons-pro/stepper.js"></script>
+    <!-- Stepper JavaScript - minified -->
+    <script type="text/javascript" src="js/addons-pro/stepper.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -581,9 +268,7 @@
     <script src="~/js/site.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-
+    <script type="text/javascript" src="core/js/addons-pro/stepper.min.js"></script>
 
 </body>
-
 </html>
