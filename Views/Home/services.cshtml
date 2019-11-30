@@ -121,7 +121,6 @@
                     <input class="pricing-title" type="text" id="projName" placeholder="Project Name" />
                 </div>
                 <div>
-
                     <input type="text" id="field1" placeholder="Add Length" />
                     <input type="text" id="field2" placeholder="Add Breadth" />
                     <input type="text" id="field3" placeholder="Add Height" />
@@ -147,7 +146,7 @@
                             field4 = parseInt(field4);
 
                             var total = field1 + field2 + field3 + field4;
-                            console.log(total);
+                            
                             document.getElementById("demo").innerHTML = "The answer is " + total;
                         }
                     </script>
@@ -167,9 +166,8 @@
                             <option value="1">40 X 30</option>
                             <option value="1">30 X 30</option>
                             <option value="2">40 X 40</option>
-                            <option value="2">50 X 40</option>
                             <option value="2">40 X 50</option>
-
+                            <option value="2">50 X 40</option>
                         </select>
                         @*This button should save and send to database*@
                         <button type="submit" class="btn-slide">Save and Submit</button>
