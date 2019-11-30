@@ -121,35 +121,52 @@
                     <input class="pricing-title" type="text" id="projName" placeholder="Project Name" />
                 </div>
                 <div>
-                    <input type="text" id="field1" placeholder="Add Length" />
-                    <input type="text" id="field2" placeholder="Add Breadth" />
-                    <input type="text" id="field3" placeholder="Add Height" />
-                    <input type="text" id="field4" placeholder="Add Rise over Run" />
-                    <button onclick="finalCalculation()" id="click">Calculate</button>
+
+                    <input type="text" id="field1" placeholder="Length" />
+                    <input type="text" id="field2" placeholder="Breadth" />
+                    <input type="text" id="field3" placeholder="Rise" />
+                    <input type="text" id="field4" placeholder="Run" />
+                    <input type="text" id="field5" placeholder="Price" />
+
+                    <button onclick="finalRoofCalculation()" id="click">Calculate</button>
 
                     <p id="demo"> </p>
 
                     <script type="text/javascript">
+                        var globalTotal = 0.0; //This variable is me trying to find out why it's not displaying properly.
                         let button = document.getElementById("click");
                         button.addEventListener("click", (event) => {
                             event.preventDefault();
                         })
 
-                        function finalCalculation(event) {
+                        function finalRoofCalculation(event) {
                             var field1 = document.getElementById("field1").value;
                             var field2 = document.getElementById("field2").value;
                             var field3 = document.getElementById("field3").value;
                             var field4 = document.getElementById("field4").value;
-                            field1 = parseInt(field1);
-                            field2 = parseInt(field2);
-                            field3 = parseInt(field3);
-                            field4 = parseInt(field4);
+                            var field5 = document.getElementById("field5").value;
+                            field1 = parseDouble(field1);
+                            field2 = parseDouble(field2);
+                            field3 = parseDouble(field3);
+                            field4 = parseDouble(field4);
+                            field5 = parseDouble(field5);
 
-                            var total = field1 + field2 + field3 + field4;
-                            
-                            document.getElementById("demo").innerHTML = "The answer is " + total;
+                            var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
+                            var roofPitch = parseDouble(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
+                            var roofArea = parseDouble(field1 * field2 * roofPitch);
+                            var shingleBundles = paraseDouble(Math.ceil(roofArea / shingleCoverage));
+
+
+                            var total = shingleBundles * field5;
+                            globalTotal = total;
+                            //console.log(total);
+                            //document.getElementById("demo").innerHTML = "The answer is " + total; //This was Nicks original calculate button.
+                           
                         }
                     </script>
+
+                    <p>The total should be <script>document.write(globalTotal); //This is where I'm trying to get it to spit out the calculation.
+                            </script></p> 
 
                     <div class="col-xs-6 d-md-inline">
                         <select class="form-control" name="select1" id="select1">
@@ -166,8 +183,9 @@
                             <option value="1">40 X 30</option>
                             <option value="1">30 X 30</option>
                             <option value="2">40 X 40</option>
-                            <option value="2">40 X 50</option>
                             <option value="2">50 X 40</option>
+                            <option value="2">40 X 50</option>
+
                         </select>
                         @*This button should save and send to database*@
                         <button type="submit" class="btn-slide">Save and Submit</button>
