@@ -54,7 +54,7 @@ namespace HomeImprovement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Type,CreatedDate,Cost")] Project project)
+        public async Task<IActionResult> Create(int id, [Bind("Name,Type,CreatedDate,Cost")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace HomeImprovement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Type,CreatedDate,Cost")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("Name,Type,CreatedDate,Cost")] Project project)
         {
             if (id != project.Id)
             {

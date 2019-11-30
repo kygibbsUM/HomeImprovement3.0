@@ -14,8 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Improvements</title>
 
-    <!-- Bootstrap -->
-
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -23,7 +21,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">*@
     @*<link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">*@
-  
+    <link href="css/addons-pro/steppers.css" rel="stylesheet">
+    <!-- Stepper CSS - minified-->
+    <link href="css/addons-pro/steppers.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -37,69 +37,33 @@
                 <h1 class="hero-title">Our Services!</h1>
             </div>
 
-            <!--First row-->
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-md-3 mb-4">
-
-                    <!-- Card -->
-                    <a href="#!" class="card hoverable d-block">
-                        <div class="text-white d-flex h-100 mask blue-gradient-rgba">
-
-                            <!-- Card content -->
-                            <div class="card-body my-4">
-
-                                <p><i class="fas fa-tablet-alt fa-2x text-muted"></i></p>
-                                <h5 class="black-text mb-0">Save Time Online!</h5>
-
-                            </div>
-                        </div>
-                    </a>
-                    <!-- Card -->
-
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/blog/gallery4.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Save Time!</h5>
+                        <p class="card-text">No need to waste time making all the calls. We know your time is precious!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-md-3 mb-4">
-
-                    <!-- Card -->
-                    <a href="#!" class="card hoverable">
-
-                        <!-- Card content -->
-                        <div class="card-body my-4">
-
-                            <p><i class="fas fa-cogs fa-2x text-muted"></i></p>
-                            <h5 class="black-text mb-0">Customize your Project</h5>
-
-                        </div>
-
-                    </a>
-                    <!-- Card -->
-
+                <div class="card">
+                    <img class="card-img-top" src="~/images/portfolio/recent/item9.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">All Online!</h5>
+                        <p class="card-text">One click and you get the ultimate price.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-md-3 mb-4">
-
-                    <!-- Card -->
-                    <a href="#!" class="card hoverable">
-
-                        <!-- Card content -->
-                        <div class="card-body my-4">
-
-                            <p><i class="fas fa-recycle fa-2x text-muted"></i></p>
-                            <h5 class="black-text mb-0">Save Energy and Reuse</h5>
-
-                        </div>
-
-                    </a>
-                    <!-- Card -->
-
+                <div class="card">
+                    <img class="card-img-top" src="~/images/portfolio/recent/item7.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">THe best consulation!</h5>
+                        <p class="card-text">Your home is our work and we take it seriously!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
-                <!--Grid column-->
-
             </div>
+
             <!--First row-->
 
         </section>
@@ -107,46 +71,47 @@
     </div>
 
     @*Attempted Calculator Front End*@
-    
-    <div id="app">
-        <div>
-            
-            <form-wizard v-on -complete="onComplete"
-                         shape="tab"
-                         color="#9b59b6">
-                <tab-content title="Personal details"
-                             icon="ti-user">
-                    My first tab content
-                </tab-content>
-                <tab-content title="Additional Info"
-                             icon="ti-settings">
-                    My second tab content
-                </tab-content>
-                <tab-content title="Last step"
-                             icon="ti-check">
-                    Yuhuuu! This seems pretty damn simple
-                </tab-content>
-            </form-wizard>
-        </div>
-    </div>
-    <script>
-        Vue.use(VueFormWizard)
-new Vue({
- el: '#app',
- methods: {
-  onComplete: function(){
-      alert('Yay. Done!');
-   }
-  }
-})
-    </script>
+    <a role="presentation" class="btn-primary animation animated-item-3" asp-controller="Home" asp-action="calculator"><b>Calculate Now!</b></a>
+
+
     <!-- THis is the Calculator ZONE-->
     <div class="row">
-        <div class="col-md-4 col-centered" id="calchtml">
+        <div class="col-md-4 col-centered" id="msform">
             <form asp-action="Create">
                 <div>
-                    <input class="pricing-title" type="text" id="projName" placeholder="Project Name" />
+                    <input class="text-black-50" type="text" id="projName" placeholder="Project Name" />
                 </div>
+                <div class="col-xs-6 d-md-inline">
+                    <select class="form-control" name="select1" id="select1">
+                        <option value="1">Bathroom</option>
+                        <option value="2">Roof</option>
+                        <option value="3">Kitchen</option>
+                        <option value="4">Floor</option>
+                        <option value="4">Walls</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <select class="form-control" name="select2" id="select2">
+                        <option value="1">5 X 8</option>
+                        <option value="1">6 X 6</option>
+                        <option value="1">5 X 9</option>
+
+                        <option value="2">20 X 40</option>
+                        <option value="2">30 X 40</option>
+                        <option value="2">40 X 50</option>
+                        <option value="2">60 X 70</option>
+
+                        <option value="3">50 X 40</option>
+                        <option value="3">40 X 50</option>
+                        <option value="4">40 X 40</option>
+                        <option value="4">50 X 40</option>
+                        <option value="4">40 X 50</option>
+
+                    </select>
+
+
+                </div>
+
                 <div>
 
                     <input type="text" id="field1" placeholder="Length" />
@@ -154,7 +119,7 @@ new Vue({
                     <input type="text" id="field3" placeholder="Rise" />
                     <input type="text" id="field4" placeholder="Run" />
                     <input type="text" id="field5" placeholder="Price" />
-                    <button id="click">Calculate</button>
+                    <button id="click" class="btn-outline-primary">Calculate</button>
 
                     <p id="demo"> </p>
 
@@ -184,216 +149,95 @@ new Vue({
                             var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
 
                             let total = shingleBundles * field5;
-                            
+
                             //console.log(total);
                             let totalBox = document.getElementById("totalBox");
                             totalBox.value = total;
                             console.log(total);
                         }
-                        
+
                     </script>
 
-                    <div id="totalArea">The total should be 
-                        <input id="totalBox" type="text" /> 
-                    </div> 
-
-                    <div class="col-xs-6 d-md-inline">
-                        <select class="form-control" name="select1" id="select1">
-                            <option value="1">Bathroom</option>
-                            <option value="2">Roof</option>
-                            <option value="3">Kitchen</option>
-                            <option value="4">Floor</option>
-                            <option value="4">Walls</option>
-                        </select>
+                    <div id="totalArea">
+                        The total should be
+                        <input id="totalBox" type="text" />
                     </div>
-                    <div class="col-xs-6">
-                        <select class="form-control" name="select2" id="select2">
-                            <option value="1">10 X 20</option>
-                            <option value="1">40 X 30</option>
-                            <option value="1">30 X 30</option>
-                            <option value="2">40 X 40</option>
-                            <option value="2">50 X 40</option>
-                            <option value="2">40 X 50</option>
-
-                        </select>
-                        @*This button should save and send to database*@
-                        <button type="submit" class="btn-slide">Save and Submit</button>
-                    </div>
-
-
                 </div>
+
+
+
+
+                <div>
+                    @*This button should save and send to database*@
+                    <button type="submit" class="btn-secondary">Save and Submit</button>
+                </div>
+
             </form>
         </div>
-    </div>
-
-    <script>
-        //jQuery time
-        var current_fs, next_fs, previous_fs; //fieldsets
-        var left, opacity, scale; //fieldset properties which we will animate
-        var animating; //flag to prevent quick multi-click glitches
-
-        $(".next").click(function () {
-            if (animating) return false;
-            animating = true;
-
-            current_fs = $(this).parent();
-            next_fs = $(this).parent().next();
-
-            //activate next step on progressbar using the index of next_fs
-            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-            //show the next fieldset
-            next_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({
-                opacity: 0
-            }, {
-                step: function (now, mx) {
-                    //as the opacity of current_fs reduces to 0 - stored in "now"
-                    //1. scale current_fs down to 80%
-                    scale = 1 - (1 - now) * 0.2;
-                    //2. bring next_fs from the right(50%)
-                    left = (now * 50) + "%";
-                    //3. increase opacity of next_fs to 1 as it moves in
-                    opacity = 1 - now;
-                    current_fs.css({
-                        'transform': 'scale(' + scale + ')',
-                        'position': 'absolute'
-                    });
-                    next_fs.css({
-                        'left': left,
-                        'opacity': opacity
-                    });
-                },
-                duration: 800,
-                complete: function () {
-                    current_fs.hide();
-                    animating = false;
-                },
-                //this comes from the custom easing plugin
-                easing: 'easeInOutBack'
-            });
-        });
-
-        $(".previous").click(function () {
-            if (animating) return false;
-            animating = true;
-
-            current_fs = $(this).parent();
-            previous_fs = $(this).parent().prev();
-
-            //de-activate current step on progressbar
-            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-            //show the previous fieldset
-            previous_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({
-                opacity: 0
-            }, {
-                step: function (now, mx) {
-                    //as the opacity of current_fs reduces to 0 - stored in "now"
-                    //1. scale previous_fs from 80% to 100%
-                    scale = 0.8 + (1 - now) * 0.2;
-                    //2. take current_fs to the right(50%) - from 0%
-                    left = ((1 - now) * 50) + "%";
-                    //3. increase opacity of previous_fs to 1 as it moves in
-                    opacity = 1 - now;
-                    current_fs.css({
-                        'left': left
-                    });
-                    previous_fs.css({
-                        'transform': 'scale(' + scale + ')',
-                        'opacity': opacity
-                    });
-                },
-                duration: 800,
-                complete: function () {
-                    current_fs.hide();
-                    animating = false;
-                },
-                //this comes from the custom easing plugin
-                easing: 'easeInOutBack'
-            });
-        });
-
-        $(".submit").click(function () {
-            return false;
-        })
+        </div>
+   
 
 
-    </script>
 
 
     @*//< !--This is start of the Pricing-- >*@
-    <div class='price'>
+    <div class="price">
         <div class="pricing-wrapper clearfix">
-            <!-- Titulo -->
             <h1 class="pricing-table-title">Get Started with Premium Features </h1>
 
             <div class="pricing-table">
                 <h3 class="pricing-title">Basic</h3>
-                <div class="price">$60<sup>/ mes</sup></div>
-                <!-- Lista de Caracteristicas / Propiedades -->
+                <div class="price">$19.99<sup>/ month</sup></div>
                 <ul class="table-list">
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
+                    <li>10  <span>Analytic View</span></li>
+                    <li>100+  <span>Projects</span></li>
+                    <li>10  <span>Free Consulting</span></li>
+                    <li>5  <span>Project Recalls</span></li>
+                    <li>10  <span>Discounted Hardware Items </span></li>
+                   
                 </ul>
-                <!-- Contratar / Comprar -->
                 <div class="table-buy">
-                    <p>$60<sup>/ mes</sup></p>
+                    <p>$19.99<sup>/ month</sup></p>
                     <a href="#" class="pricing-action">Buy Now!</a>
                 </div>
             </div>
 
             <div class="pricing-table recommended">
                 <h3 class="pricing-title">Premium</h3>
-                <div class="price">$19.99<sup>/ month</sup></div>
-                <!-- Lista de Caracteristicas / Propiedades -->
-                <ul class="table-list">
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
+                <div class="price">$39.99<sup>/ month</sup></div>
+                 <ul class="table-list">
+                    <li>10  <span>Analytic View</span></li>
+                    <li>Unlimited  <span>Projects</span></li>
+                    <li>100  <span>Free Consulting</span></li>
+                    <li>50  <span>Project Recalls</span></li>
+                    <li>20  <span>Discounted Hardware Items </span></li>
+
                 </ul>
-                <!-- Contratar / Comprar -->
                 <div class="table-buy">
-                    <p>$69.99<sup>/ mes</sup></p>
+                    <p>$39.99<sup>/ mes</sup></p>
                     <a href="#" class="pricing-action">Buy Now!</a>
                 </div>
             </div>
 
             <div class="pricing-table">
                 <h3 class="pricing-title">Ultimate</h3>
-                <div class="price">$200<sup>/ month</sup></div>
-                <!-- Lista de Caracteristicas / Propiedades -->
-                <ul class="table-list">
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
-                    <li>10  <span>Contractor</span></li>
+                <div class="price">$49.99<sup>/ month</sup></div>
+               <ul class="table-list">
+                    <li>10  <span>Analytic View</span></li>
+                    <li>Unlimited  <span>Projects</span></li>
+                    <li>Unlimited  <span>Free Consulting</span></li>
+                    <li>50  <span>Project Recalls</span></li>
+                    <li>30  <span>Discounted Hardware Items </span></li>
+
                 </ul>
-                <!-- Contratar / Comprar -->
-                <div class="table-buy">
-                    <p>$100<sup>/ month</sup></p>
+                 <div class="table-buy">
+                    <p>$49.99<sup>/ month</sup></p>
                     <a href="#" class="pricing-action">Buy Now!</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-3 mb-5">
-
-    </div>
+ 
     <script>
         var $select1 = $('#select1'),
             $select2 = $('#select2'),
@@ -407,6 +251,9 @@ new Vue({
 
 
 
+    <script type="text/javascript" src="js/addons-pro/stepper.js"></script>
+    <!-- Stepper JavaScript - minified -->
+    <script type="text/javascript" src="js/addons-pro/stepper.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -421,9 +268,7 @@ new Vue({
     <script src="~/js/site.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-
+    <script type="text/javascript" src="core/js/addons-pro/stepper.min.js"></script>
 
 </body>
-
 </html>
