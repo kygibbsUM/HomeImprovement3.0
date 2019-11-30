@@ -127,16 +127,16 @@
                     <input type="text" id="field3" placeholder="Rise" />
                     <input type="text" id="field4" placeholder="Run" />
                     <input type="text" id="field5" placeholder="Price" />
-
-                    <button onclick="finalRoofCalculation()" id="click">Calculate</button>
+                    <button id="click">Calculate</button>
 
                     <p id="demo"> </p>
 
                     <script type="text/javascript">
-                        var globalTotal = 0.0; //This variable is me trying to find out why it's not displaying properly.
+                        let globalTotal = 0.0; //This variable is me trying to find out why it's not displaying properly.
                         let button = document.getElementById("click");
                         button.addEventListener("click", (event) => {
                             event.preventDefault();
+                            finalRoofCalculation();
                         })
 
                         function finalRoofCalculation(event) {
@@ -145,28 +145,30 @@
                             var field3 = document.getElementById("field3").value;
                             var field4 = document.getElementById("field4").value;
                             var field5 = document.getElementById("field5").value;
-                            field1 = parseDouble(field1);
-                            field2 = parseDouble(field2);
-                            field3 = parseDouble(field3);
-                            field4 = parseDouble(field4);
-                            field5 = parseDouble(field5);
+                            field1 = parseFloat(field1);
+                            field2 = parseFloat(field2);
+                            field3 = parseFloat(field3);
+                            field4 = parseFloat(field4);
+                            field5 = parseFloat(field5);
 
                             var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
-                            var roofPitch = parseDouble(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
-                            var roofArea = parseDouble(field1 * field2 * roofPitch);
-                            var shingleBundles = paraseDouble(Math.ceil(roofArea / shingleCoverage));
+                            var roofPitch = parseFloat(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
+                            var roofArea = parseFloat(field1 * field2 * roofPitch);
+                            var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
 
-
-                            var total = shingleBundles * field5;
-                            globalTotal = total;
+                            let total = shingleBundles * field5;
+                            
                             //console.log(total);
-                            //document.getElementById("demo").innerHTML = "The answer is " + total; //This was Nicks original calculate button.
-                           
+                            let totalBox = document.getElementById("totalBox");
+                            totalBox.value = total;
+                            console.log(total);
                         }
+                        
                     </script>
 
-                    <p>The total should be <script>document.write(globalTotal); //This is where I'm trying to get it to spit out the calculation.
-                            </script></p> 
+                    <div id="totalArea">The total should be 
+                        <input id="totalBox" type="text" /> 
+                    </div> 
 
                     <div class="col-xs-6 d-md-inline">
                         <select class="form-control" name="select1" id="select1">
