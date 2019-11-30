@@ -1,4 +1,5 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -20,28 +21,21 @@
     <link href="css/prettyPhoto.css" rel="stylesheet">
     @*<link href="css/site.css" rel="stylesheet" />*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">
-    <!-- =======================================================
-      Theme Name: Company
-      Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">*@
+    @*<link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">*@
+  
 </head>
 
 <body>
     <div class="container my-5">
-
-
         <!--Section: Content-->
-        <section class="dark-grey-text text-center">
+        <section class="dark-grey-text  ">
 
             <h6 class="font-weight-normal text-uppercase font-small grey-text mb-4">Features</h6>
             <!-- Section heading -->
-            <h3 class="font-weight-bold black-text mb-4 pb-2">Unique Factors</h3>
-            <hr class="w-header">
-            <!-- Section description -->
-            <p class="lead text-muted mx-auto mt-4 pt-2 mb-5">It's really easy to create a landing page for your awesome product.</p>
+            <div class="jumbotron hero-nature">
+                <h1 class="hero-title">Our Services!</h1>
+            </div>
 
             <!--First row-->
             <div class="row">
@@ -50,16 +44,17 @@
                 <div class="col-md-3 mb-4">
 
                     <!-- Card -->
-                    <a href="#!" class="card hoverable">
+                    <a href="#!" class="card hoverable d-block">
+                        <div class="text-white d-flex h-100 mask blue-gradient-rgba">
 
-                        <!-- Card content -->
-                        <div class="card-body my-4">
+                            <!-- Card content -->
+                            <div class="card-body my-4">
 
-                            <p><i class="fas fa-tablet-alt fa-2x text-muted"></i></p>
-                            <h5 class="black-text mb-0">Save Time Online!</h5>
+                                <p><i class="fas fa-tablet-alt fa-2x text-muted"></i></p>
+                                <h5 class="black-text mb-0">Save Time Online!</h5>
 
+                            </div>
                         </div>
-
                     </a>
                     <!-- Card -->
 
@@ -84,7 +79,6 @@
 
                 </div>
                 <!--Grid column-->
-           
                 <!--Grid column-->
                 <div class="col-md-3 mb-4">
 
@@ -110,12 +104,45 @@
 
         </section>
 
-
     </div>
 
+    @*Attempted Calculator Front End*@
+    
+    <div id="app">
+        <div>
+            
+            <form-wizard v-on -complete="onComplete"
+                         shape="tab"
+                         color="#9b59b6">
+                <tab-content title="Personal details"
+                             icon="ti-user">
+                    My first tab content
+                </tab-content>
+                <tab-content title="Additional Info"
+                             icon="ti-settings">
+                    My second tab content
+                </tab-content>
+                <tab-content title="Last step"
+                             icon="ti-check">
+                    Yuhuuu! This seems pretty damn simple
+                </tab-content>
+            </form-wizard>
+        </div>
+    </div>
+    <script>
+        Vue.use(VueFormWizard)
+new Vue({
+ el: '#app',
+ methods: {
+  onComplete: function(){
+      alert('Yay. Done!');
+   }
+  }
+})
+    </script>
     <!-- THis is the Calculator ZONE-->
     <div class="row">
-        <div class="col-md-4 col-centered" id="calchtml" >
+        <div class="col-md-4 col-centered" id="calchtml">
             <form asp-action="Create">
                 <div>
                     <input class="pricing-title" type="text" id="projName" placeholder="Project Name" />
@@ -347,81 +374,6 @@
         </div>
     </div>
     <div class="container-fluid mt-3 mb-5">
-
-        <!-- Section -->
-        <section style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/full%20page/img%20(2).jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-
-            <style>
-                .input-grey .input-group-lg > .input-group-prepend > .input-group-text {
-                    border-radius: .125rem;
-                }
-
-                .input-grey .form-control {
-                    border-radius: .125rem;
-                }
-
-                    .input-grey .form-control.form-control-lg {
-                        font-size: 1rem;
-                    }
-
-                .form-control:focus {
-                    background-color: rgba(255,255,255,.3);
-                }
-
-                .input-grey input::placeholder {
-                    color: #fff;
-                }
-
-                .input-grey .input-group-lg > .form-control:not(textarea) {
-                    height: calc(1.5em + 1rem + 6px);
-                }
-
-                .social .fab {
-                    width: 30px;
-                    height: 30px;
-                }
-            </style>
-
-            <div class="mask rgba-black-strong py-5">
-
-                <div class="container text-center my-5">
-
-                    <h3 class="font-weight-bold text-center white-text pb-2">News and Updates</h3>
-                    <p class="lead text-center white-text pt-2 mb-5">
-                        Subscribe to our newsletter and receive the latest news
-                        from MDB.
-                    </p>
-
-                    <form class="input-grey mb-5" action="" method="post" target="_blank">
-                        <div class="form-row">
-                            <div class="col-md-4 ml-auto">
-                                <div class="input-group input-group-lg z-depth-1">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text rgba-white-light border-0"><i class="fa fa-envelope white-text"></i></span>
-                                    </div>
-                                    <input type="email" name="EMAIL" class="form-control form-control-lg rgba-white-light white-text border-0 z-depth-0" placeholder="Email Address">
-                                </div>
-                            </div>
-
-                            <div class="col-md-2 mr-auto">
-                                <button class="btn btn-block btn-primary">Subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <div class="social text-center">
-                        <a class="mx-1" href="#"><i class="fab fa-facebook-f p-2 rounded rgba-white-light white-text"></i></a>
-                        <a class="mx-1" href="#"><i class="fab fa-twitter p-2 rounded rgba-white-light white-text"></i></a>
-                        <a class="mx-1" href="#"><i class="fab fa-linkedin-in p-2 rounded rgba-white-light white-text"></i></a>
-                        <a class="mx-1" href="#"><i class="fab fa-instagram p-2 rounded rgba-white-light white-text"></i></a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-        <!-- Section -->
 
     </div>
     <script>

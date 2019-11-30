@@ -1351,7 +1351,7 @@ html {
 }
 
 *, *:before, *:after {
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -1915,4 +1915,13 @@ a {
 .col-centered {
     float: none;
     margin: 0 auto;
+}
+div.jumbotron.hero-nature {
+    color: #fff;
+    text-align: center;
+    background: url('../images/3.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
