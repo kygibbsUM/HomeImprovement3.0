@@ -28,10 +28,8 @@
     ======================================================= -->
 </head>
 
-<body>
+<body onload="hideFields()">
     <div class="container my-5">
-
-
         <!--Section: Content-->
         <section class="dark-grey-text text-center">
 
@@ -111,77 +109,206 @@
 
     </div>
 
-    <!-- THis is the Calculator ZONE-->
+    <!-- This is the Calculator ZONE-->
     <div class="row">
         <div class="col-md-4 col-centered" id="calchtml">
-            <form asp-action="Create">
-                <div>
-                    <input class="pricing-title" type="text" id="projName" placeholder="Project Name" />
+            <form asp-controller="Projects" asp-action="Create">
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Project Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="Type" class="control-label"></label>
+                    <select asp-for="Type" class="form-control" id="typeBox" onchange="showFields()" placeholder="Project Type">
+                        <option value="none"></option>
+                        <option value="Roofing">Roofing</option>
+                        <option value="Flooring">Flooring</option>
+                        <option value="Painting">Painting</option>
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+
+                @* Fields for all of the calculators, these will all be hidden at the start - KG *@
+                <input type="text" id="field1" placeholder="Length" />
+                <input type="text" id="field2" placeholder="Breadth" />
+                <input type="text" id="field3" placeholder="Rise" />
+                <input type="text" id="field4" placeholder="Run" />
+                <input type="text" id="field5" placeholder="Price" />
+
+                <input type="text" id="paintWidth" placeholder="Width of Walls" />
+                <input type="text" id="paintHeight" placeholder="Height of Walls" />
+                <input type="text" id="paintWalls" placeholder="Number of Walls" />
+
+                <input type="text" id="floorWidth" placeholder="Width of Floor" />
+                <input type="text" id="floorHeight" placeholder="Height of Floor" />
+
+                @* Gotta style this button to make it not look like garbage - KG *@
                 <div>
-
-                    <input type="text" id="field1" placeholder="Length" />
-                    <input type="text" id="field2" placeholder="Breadth" />
-                    <input type="text" id="field3" placeholder="Rise" />
-                    <input type="text" id="field4" placeholder="Run" />
-                    <input type="text" id="field5" placeholder="Price" />
                     <button id="click">Calculate</button>
+                </div>
 
-                    <p id="demo"> </p>
+                <script type="text/javascript">
+                    let button = document.getElementById("click");
+                    button.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        chooseCalculation();
+                    })
 
-                    <script type="text/javascript">
-                        let globalTotal = 0.0; //This variable is me trying to find out why it's not displaying properly.
-                        let button = document.getElementById("click");
-                        button.addEventListener("click", (event) => {
-                            event.preventDefault();
-                            finalRoofCalculation();
-                        })
+                    function hideFields() {
+                        //When the page loads, hide all fields until the user picks a job. Then display the
+                        //ones they will need.
+                        document.getElementById("field1").style.visibility = "hidden";
+                        document.getElementById("field2").style.visibility = "hidden";
+                        document.getElementById("field3").style.visibility = "hidden";
+                        document.getElementById("field4").style.visibility = "hidden";
+                        document.getElementById("field5").style.visibility = "hidden";
 
-                        function finalRoofCalculation(event) {
-                            var field1 = document.getElementById("field1").value;
-                            var field2 = document.getElementById("field2").value;
-                            var field3 = document.getElementById("field3").value;
-                            var field4 = document.getElementById("field4").value;
-                            var field5 = document.getElementById("field5").value;
+                        document.getElementById("paintWidth").style.visibility = "hidden";
+                        document.getElementById("paintHeight").style.visibility = "hidden";
+                        document.getElementById("paintWalls").style.visibility = "hidden";
 
-                            field1 = parseFloat(field1);
-                            field2 = parseFloat(field2);
-                            field3 = parseFloat(field3);
-                            field4 = parseFloat(field4);
-                            field5 = parseFloat(field5);
+                        //Are these labeled correctly? Feel free to change them - KG
+                        document.getElementById("floorWidth").style.visibility = "hidden"; 
+                        document.getElementById("floorHeight").style.visibility = "hidden";
+                    }
 
-                            var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
-                            var roofPitch = parseFloat(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
-                            var roofArea = parseFloat(field1 * field2 * roofPitch);
-                            var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
+                    function showFields() {
+                        let jobBox = document.getElementById("typeBox");
+                        let jobSelection = jobBox.options[jobBox.selectedIndex].value;
 
-                            let total = shingleBundles * field5;
+                        switch (jobSelection) {
+                            case "Painting":
+                                document.getElementById("paintWidth").style.visibility = "visible";
+                                document.getElementById("paintHeight").style.visibility = "visible";
+                                document.getElementById("paintWalls").style.visibility = "visible";
 
-                            //console.log(total);
-                            let totalBox = document.getElementById("totalBox");
-                            totalBox.value = total;
-                            console.log(total);
+                                document.getElementById("field1").style.visibility = "hidden";
+                                document.getElementById("field2").style.visibility = "hidden";
+                                document.getElementById("field3").style.visibility = "hidden";
+                                document.getElementById("field4").style.visibility = "hidden";
+                                document.getElementById("field5").style.visibility = "hidden";
+
+                                document.getElementById("floorWidth").style.visibility = "hidden"; 
+                                document.getElementById("floorHeight").style.visibility = "hidden";
+                                console.log("Painting");
+                                break;
+
+                            case "Roofing":
+                                document.getElementById("field1").style.visibility = "visible";
+                                document.getElementById("field2").style.visibility = "visible";
+                                document.getElementById("field3").style.visibility = "visible";
+                                document.getElementById("field4").style.visibility = "visible";
+                                document.getElementById("field5").style.visibility = "visible";
+
+                                document.getElementById("paintWidth").style.visibility = "hidden";
+                                document.getElementById("paintHeight").style.visibility = "hidden";
+                                document.getElementById("paintWalls").style.visibility = "hidden";
+
+                                document.getElementById("floorWidth").style.visibility = "hidden"; 
+                                document.getElementById("floorHeight").style.visibility = "hidden";
+                                console.log("Roofing");
+                                break;
+
+                            case "Flooring":
+                                document.getElementById("floorWidth").style.visibility = "visible"; 
+                                document.getElementById("floorHeight").style.visibility = "visible";
+
+                                document.getElementById("field1").style.visibility = "hidden";
+                                document.getElementById("field2").style.visibility = "hidden";
+                                document.getElementById("field3").style.visibility = "hidden";
+                                document.getElementById("field4").style.visibility = "hidden";
+                                document.getElementById("field5").style.visibility = "hidden";
+
+                                document.getElementById("paintWidth").style.visibility = "hidden";
+                                document.getElementById("paintHeight").style.visibility = "hidden";
+                                document.getElementById("paintWalls").style.visibility = "hidden";
+
+                                break;
+                            default:
+                                console.log("default");
+                                break;
+                        }
+                    }
+
+                    function chooseCalculation() {
+                        let jobBox = document.getElementById("typeBox");
+                        let jobSelection = jobBox.options[jobBox.selectedIndex].value;
+
+                        switch (jobSelection) {
+                            case "Painting":
+                                paintingCalculation();
+                                break;
+
+                            case "Roofing":
+                                roofingCalculation();
+                                break;
+
+                            case "Flooring":
+                                flooringCalculation();
+                                break;
+
+                            default:
+                                break;
                         }
 
-                    </script>
+                    }
 
-                    <div id="totalArea">
-                        The total should be
-                        <input id="totalBox" type="text" />
-                    </div>
+                    function flooringCalculation(){
+                        let total = 1 + 1;
+                        let totalBox = document.getElementById("totalBox");
+                        totalBox.value = total;
+                        totalBox.readOnly = true;
+                    }
 
+                    function paintingCalculation() {
+                        let total = 2 + 2;
+                        let totalBox = document.getElementById("totalBox");
+                        totalBox.value = total;
+                        totalBox.readOnly = true;
+                    }
+                    
+                    function roofingCalculation() {
+                        var field1 = document.getElementById("field1").value;
+                        var field2 = document.getElementById("field2").value;
+                        var field3 = document.getElementById("field3").value;
+                        var field4 = document.getElementById("field4").value;
+                        var field5 = document.getElementById("field5").value;
 
-                    <div class="col-xs-6">
+                        field1 = parseFloat(field1);
+                        field2 = parseFloat(field2);
+                        field3 = parseFloat(field3);
+                        field4 = parseFloat(field4);
+                        field5 = parseFloat(field5);
 
-                        @*This button should save and send to database*@
-                        <button type="submit" class="btn-slide">Save and Submit</button>
-                    </div>
+                        var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
+                        var roofPitch = parseFloat(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
+                        var roofArea = parseFloat(field1 * field2 * roofPitch);
+                        var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
 
+                        let total = shingleBundles * field5;
+                        let totalBox = document.getElementById("totalBox");
+                        totalBox.value = total;
+                        totalBox.readOnly = true;
+                    }
 
+                </script>
+
+                <div class="form-group" id="totalArea">
+                    <label asp-for="Cost" class="control-label"></label>
+                    <input asp-for="Cost" class="form-control" id="totalBox" placeholder="Final Price" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- END CALCULATOR ZONE-->
 
     <script>
         //jQuery time

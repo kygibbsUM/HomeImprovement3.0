@@ -10,7 +10,7 @@ namespace HomeImprovement3._0.Models
     {
         public int Id { get; set; }
 
-        public int CreatedByID { get; set; }
+        public string CreatedByID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
 
