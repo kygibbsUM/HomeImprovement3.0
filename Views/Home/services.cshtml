@@ -225,10 +225,9 @@
                         var floorWidth = parseFloat(document.getElementById("floorWidth").value);
                         var floorArea = parseFloat(floorLength * floorWidth);
                         var floorCoverage = 5; //This variable will be used for coverage per box of flooring later.
-                        var floorBoxes = parseInt(Math.Ceil(floorArea / floorCoverage));
+                        var floorBoxes = parseInt(Math.ceil(floorArea / floorCoverage));
                         var floorPrice = 30; //This will get pulled from whatever we used to set the price per box.
                         let total = parseFloat(floorBoxes * floorPrice);
-
                         let totalBox = document.getElementById("totalBox");
                         totalBox.value = total;
                         totalBox.readOnly = true;
@@ -240,7 +239,7 @@
                         var paintHeight = parseFloat(document.getElementById("paintHeight").value);
                         var paintArea = parseFloat(((paintWidth * paintHeight) * 2) + ((paintLength * paintHeight) * 2) + (paintWidth * paintLength))
                         var paintCoverage = 350;
-                        var paintCans = parseInt(Math.Ceil(paintArea / paintCoverage));
+                        var paintCans = parseInt(Math.ceil(paintArea / paintCoverage));
                         var paintPrice = 24.97;
                         let total = parseFloat(paintPrice * paintCans);
 

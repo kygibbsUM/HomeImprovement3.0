@@ -10,6 +10,7 @@ namespace HomeImprovement3._0.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Created by")] 
         public string CreatedByID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
