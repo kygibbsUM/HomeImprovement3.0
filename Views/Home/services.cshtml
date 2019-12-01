@@ -92,18 +92,18 @@
                     </div>
 
                     @* Fields for all of the calculators, these will all be hidden at the start - KG *@
-                    <input type="text" id="field1" placeholder="Length" />
-                    <input type="text" id="field2" placeholder="Breadth" />
-                    <input type="text" id="field3" placeholder="Rise" />
-                    <input type="text" id="field4" placeholder="Run" />
-                    <input type="text" id="field5" placeholder="Price" />
+                    <input type="text" id="roofLength" placeholder="Length" />
+                    <input type="text" id="roofWidth" placeholder="Width" />
+                    <input type="text" id="roofRise" placeholder="Rise" />
+                    <input type="text" id="roofRun" placeholder="Run" />
+                    <input type="text" id="roofPrice" placeholder="Price" />
 
-                    <input type="text" id="paintWidth" placeholder="Width of Walls" />
+                    <input type="text" id="paintWidth" placeholder="Width of Floor" />
+                    <input type="text" id="paintLength" placeholder="Length of Floor" />
                     <input type="text" id="paintHeight" placeholder="Height of Walls" />
-                    <input type="text" id="paintWalls" placeholder="Number of Walls" />
 
                     <input type="text" id="floorWidth" placeholder="Width of Floor" />
-                    <input type="text" id="floorHeight" placeholder="Height of Floor" />
+                    <input type="text" id="floorLength" placeholder="Length of Floor" />
 
                     @* Gotta style this button to make it not look like garbage - KG *@
                     <div>
@@ -120,19 +120,19 @@
                         function hideFields() {
                             //When the page loads, hide all fields until the user picks a job. Then display the
                             //ones they will need.
-                            document.getElementById("field1").style.visibility = "hidden";
-                            document.getElementById("field2").style.visibility = "hidden";
-                            document.getElementById("field3").style.visibility = "hidden";
-                            document.getElementById("field4").style.visibility = "hidden";
-                            document.getElementById("field5").style.visibility = "hidden";
+                            document.getElementById("roofLength").style.visibility = "hidden";
+                            document.getElementById("roofWidth").style.visibility = "hidden";
+                            document.getElementById("roofRise").style.visibility = "hidden";
+                            document.getElementById("roofRun").style.visibility = "hidden";
+                            document.getElementById("roofPrice").style.visibility = "hidden";
 
                             document.getElementById("paintWidth").style.visibility = "hidden";
+                            document.getElementById("paintLength").style.visibility = "hidden";
                             document.getElementById("paintHeight").style.visibility = "hidden";
-                            document.getElementById("paintWalls").style.visibility = "hidden";
 
                             //Are these labeled correctly? Feel free to change them - KG
                             document.getElementById("floorWidth").style.visibility = "hidden";
-                            document.getElementById("floorHeight").style.visibility = "hidden";
+                            document.getElementById("floorLength").style.visibility = "hidden";
 
                             console.log("Fields Hidden");
                         }
@@ -144,49 +144,49 @@
                             switch (jobSelection) {
                                 case "Painting":
                                     document.getElementById("paintWidth").style.visibility = "visible";
+                                    document.getElementById("paintLength").style.visibility = "visible";
                                     document.getElementById("paintHeight").style.visibility = "visible";
-                                    document.getElementById("paintWalls").style.visibility = "visible";
 
-                                    document.getElementById("field1").style.visibility = "hidden";
-                                    document.getElementById("field2").style.visibility = "hidden";
-                                    document.getElementById("field3").style.visibility = "hidden";
-                                    document.getElementById("field4").style.visibility = "hidden";
-                                    document.getElementById("field5").style.visibility = "hidden";
+                                    document.getElementById("roofLength").style.visibility = "hidden";
+                                    document.getElementById("roofWidth").style.visibility = "hidden";
+                                    document.getElementById("roofRise").style.visibility = "hidden";
+                                    document.getElementById("roofRun").style.visibility = "hidden";
+                                    document.getElementById("roofPrice").style.visibility = "hidden";
 
                                     document.getElementById("floorWidth").style.visibility = "hidden";
-                                    document.getElementById("floorHeight").style.visibility = "hidden";
+                                    document.getElementById("floorLength").style.visibility = "hidden";
                                     console.log("Painting");
                                     break;
 
                                 case "Roofing":
-                                    document.getElementById("field1").style.visibility = "visible";
-                                    document.getElementById("field2").style.visibility = "visible";
-                                    document.getElementById("field3").style.visibility = "visible";
-                                    document.getElementById("field4").style.visibility = "visible";
-                                    document.getElementById("field5").style.visibility = "visible";
+                                    document.getElementById("roofLength").style.visibility = "visible";
+                                    document.getElementById("roofWidth").style.visibility = "visible";
+                                    document.getElementById("roofRise").style.visibility = "visible";
+                                    document.getElementById("roofRun").style.visibility = "visible";
+                                    document.getElementById("roofPrice").style.visibility = "visible";
 
                                     document.getElementById("paintWidth").style.visibility = "hidden";
+                                    document.getElementById("paintLength").style.visibility = "hidden";
                                     document.getElementById("paintHeight").style.visibility = "hidden";
-                                    document.getElementById("paintWalls").style.visibility = "hidden";
 
                                     document.getElementById("floorWidth").style.visibility = "hidden";
-                                    document.getElementById("floorHeight").style.visibility = "hidden";
+                                    document.getElementById("floorLength").style.visibility = "hidden";
                                     console.log("Roofing");
                                     break;
 
                                 case "Flooring":
                                     document.getElementById("floorWidth").style.visibility = "visible";
-                                    document.getElementById("floorHeight").style.visibility = "visible";
+                                    document.getElementById("floorLength").style.visibility = "visible";
 
-                                    document.getElementById("field1").style.visibility = "hidden";
-                                    document.getElementById("field2").style.visibility = "hidden";
-                                    document.getElementById("field3").style.visibility = "hidden";
-                                    document.getElementById("field4").style.visibility = "hidden";
-                                    document.getElementById("field5").style.visibility = "hidden";
+                                    document.getElementById("roofLength").style.visibility = "hidden";
+                                    document.getElementById("roofWidth").style.visibility = "hidden";
+                                    document.getElementById("roofRise").style.visibility = "hidden";
+                                    document.getElementById("roofRun").style.visibility = "hidden";
+                                    document.getElementById("roofPrice").style.visibility = "hidden";
 
                                     document.getElementById("paintWidth").style.visibility = "hidden";
+                                    document.getElementById("paintLength").style.visibility = "hidden";
                                     document.getElementById("paintHeight").style.visibility = "hidden";
-                                    document.getElementById("paintWalls").style.visibility = "hidden";
 
                                     break;
                                 default:
@@ -219,38 +219,51 @@
                         }
 
                         function flooringCalculation() {
-                            let total = 1 + 1;
+                            var floorLength = parseFloat(document.getElementById("floorLength").value);
+                            var floorWidth = parseFloat(document.getElementById("floorWidth").value);
+                            var floorArea = parseFloat(floorLength * floorWidth);
+                            var floorCoverage = 5; //This variable will be used for coverage per box of flooring later.
+                            var floorBoxes = parseInt(Math.Ceil(floorArea / floorCoverage));
+                            var floorPrice = 30; //This will get pulled from whatever we used to set the price per box.
+                            let total = parseFloat(floorBoxes * floorPrice);
                             let totalBox = document.getElementById("totalBox");
                             totalBox.value = total;
                             totalBox.readOnly = true;
                         }
 
                         function paintingCalculation() {
-                            let total = 2 + 2;
+                            var paintWidth = parseFloat(document.getElementById("paintWidth").value);
+                            var paintLength = parseFloat(document.getElementById("paintLength").value);
+                            var paintHeight = parseFloat(document.getElementById("paintHeight").value);
+                            var paintArea = parseFloat(((paintWidth * paintHeight) * 2) + ((paintLength * paintHeight) * 2) + (paintWidth * paintLength))
+                            var paintCoverage = 350;
+                            var paintCans = parseInt(Math.Ceil(paintArea / paintCoverage));
+                            var paintPrice = 24.97;
+                            let total = parseFloat(paintPrice * paintCans);
                             let totalBox = document.getElementById("totalBox");
                             totalBox.value = total;
                             totalBox.readOnly = true;
                         }
 
                         function roofingCalculation() {
-                            var field1 = document.getElementById("field1").value;
-                            var field2 = document.getElementById("field2").value;
-                            var field3 = document.getElementById("field3").value;
-                            var field4 = document.getElementById("field4").value;
-                            var field5 = document.getElementById("field5").value;
+                            var roofLength = document.getElementById("roofLength").value;
+                            var roofWidth = document.getElementById("roofWidth").value;
+                            var roofRise = document.getElementById("roofRise").value;
+                            var roofRun = document.getElementById("roofRun").value;
+                            var roofPrice = document.getElementById("roofPrice").value;
 
-                            field1 = parseFloat(field1);
-                            field2 = parseFloat(field2);
-                            field3 = parseFloat(field3);
-                            field4 = parseFloat(field4);
-                            field5 = parseFloat(field5);
+                            roofLength = parseFloat(roofLength);
+                            roofWidth = parseFloat(roofWidth);
+                            roofRise = parseFloat(roofRise);
+                            roofRun = parseFloat(roofRun);
+                            roofPrice = parseFloat(roofPrice);
 
                             var shingleCoverage = 33.3; //This needs to be set by the user somewhere, or pulled from the database.
-                            var roofPitch = parseFloat(1 + Math.sqrt(field3 ^ 2 + field4 ^ 2) / 12);
-                            var roofArea = parseFloat(field1 * field2 * roofPitch);
-                            var shingleBundles = parseFloat(Math.ceil(roofArea / shingleCoverage));
+                            var roofPitch = parseFloat(1 + Math.sqrt(roofRise ^ 2 + roofRun ^ 2) / 12);
+                            var roofArea = parseFloat(roofLength * roofWidth * roofPitch);
+                            var shingleBundles = parseInt(Math.ceil(roofArea / shingleCoverage));
 
-                            let total = shingleBundles * field5;
+                            let total = shingleBundles * roofPrice;
                             let totalBox = document.getElementById("totalBox");
                             totalBox.value = total;
                             totalBox.readOnly = true;
