@@ -12,6 +12,7 @@ namespace HomeImprovement3._0.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
         }
     }
 }
