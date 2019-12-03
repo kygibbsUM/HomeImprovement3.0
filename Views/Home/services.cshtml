@@ -77,7 +77,7 @@
         <div class="col-md-10 col-centered" id="calchtml">
             <form asp-controller="Projects" asp-action="Create">
                 <div class="form-text">
-                   <h1>Home Improvement Calculator<span class="label label-primary"> Get Started!</span></h1>
+                    <h1>Home Improvement Calculator<span class="label label-primary"> Get Started!</span></h1>
                 </div>
                 <div class="form-group">
 
@@ -104,22 +104,28 @@
                 </div>
 
                 @* Fields for all of the calculators, these will all be hidden at the start - KG *@
-                <input type="text" id="roofLength" placeholder="Length" />
-                <input type="text" id="roofWidth" placeholder="Width" />
-                <input type="text" id="roofRise" placeholder="Rise" />
-                <input type="text" id="roofRun" placeholder="Run" />
-                <input type="text" id="roofPrice" placeholder="Price" />
+                
+                    <input type="text" id="roofLength" placeholder="Length" />
+                    <input type="text" id="roofWidth" placeholder="Width" />
+                    <input type="text" id="roofRise" placeholder="Rise" />
+                    <input type="text" id="roofRun" placeholder="Run" />
+                    <input type="text" id="roofPrice" placeholder="Price" />
+                  
 
                 <input type="text" id="paintWidth" placeholder="Width of Floor" />
                 <input type="text" id="paintLength" placeholder="Length of Floor" />
                 <input type="text" id="paintHeight" placeholder="Height of Walls" />
+                <input type="text" id="floorPrice" placeholder="Price" />
+              
 
                 <input type="text" id="floorWidth" placeholder="Width of Floor" />
                 <input type="text" id="floorLength" placeholder="Length of Floor" />
-
+              
+                    <input type="text" id="paintPrice" placeholder="Price" />
+            
                 @* Gotta style this button to make it not look like garbage - KG *@
                 <div>
-                    <button id="click">Calculate</button>
+                    <button class="btn-primary" id="click">Calculate</button>
                 </div>
 
                 <script type="text/javascript">
@@ -141,10 +147,12 @@
                         document.getElementById("paintWidth").style.visibility = "hidden";
                         document.getElementById("paintLength").style.visibility = "hidden";
                         document.getElementById("paintHeight").style.visibility = "hidden";
+                        document.getElementById("floorPrice").style.visibility = "hidden";
 
                         //Are these labeled correctly? Feel free to change them - KG
                         document.getElementById("floorWidth").style.visibility = "hidden";
                         document.getElementById("floorLength").style.visibility = "hidden";
+                        document.getElementById("paintPrice").style.visibility = "hidden";
 
                         console.log("Fields Hidden");
                     }
@@ -158,12 +166,14 @@
                                 document.getElementById("paintWidth").style.visibility = "visible";
                                 document.getElementById("paintLength").style.visibility = "visible";
                                 document.getElementById("paintHeight").style.visibility = "visible";
+                                document.getElementById("paintPrice").style.visibility = "visible";
 
                                 document.getElementById("roofLength").style.visibility = "hidden";
                                 document.getElementById("roofWidth").style.visibility = "hidden";
                                 document.getElementById("roofRise").style.visibility = "hidden";
                                 document.getElementById("roofRun").style.visibility = "hidden";
                                 document.getElementById("roofPrice").style.visibility = "hidden";
+                                document.getElementById("floorPrice").style.visibility = "hidden";
 
                                 document.getElementById("floorWidth").style.visibility = "hidden";
                                 document.getElementById("floorLength").style.visibility = "hidden";
@@ -180,6 +190,8 @@
                                 document.getElementById("paintWidth").style.visibility = "hidden";
                                 document.getElementById("paintLength").style.visibility = "hidden";
                                 document.getElementById("paintHeight").style.visibility = "hidden";
+                                document.getElementById("floorPrice").style.visibility = "hidden";
+                                document.getElementById("paintPrice").style.visibility = "hidden";
 
                                 document.getElementById("floorWidth").style.visibility = "hidden";
                                 document.getElementById("floorLength").style.visibility = "hidden";
@@ -189,12 +201,14 @@
                             case "Flooring":
                                 document.getElementById("floorWidth").style.visibility = "visible";
                                 document.getElementById("floorLength").style.visibility = "visible";
+                                document.getElementById("floorPrice").style.visibility = "visible";
 
                                 document.getElementById("roofLength").style.visibility = "hidden";
                                 document.getElementById("roofWidth").style.visibility = "hidden";
                                 document.getElementById("roofRise").style.visibility = "hidden";
                                 document.getElementById("roofRun").style.visibility = "hidden";
                                 document.getElementById("roofPrice").style.visibility = "hidden";
+                                document.getElementById("paintPrice").style.visibility = "hidden";
 
                                 document.getElementById("paintWidth").style.visibility = "hidden";
                                 document.getElementById("paintLength").style.visibility = "hidden";
