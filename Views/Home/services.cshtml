@@ -87,6 +87,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label asp-for="CreatedDate" class="control-label"></label>
+                    <input asp-for="CreatedDate" class="form-control" placeholder="Creation Date" value="@DateTime.Today.ToString("d")" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
                     <label asp-for="Type" class="control-label"></label>
                     <select asp-for="Type" class="form-control" id="typeBox" onchange="showFields()" placeholder="Project Type">
                         <option value="none"></option>
@@ -294,7 +300,7 @@
                         <span asp-validation-for="CreatedByID" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <input type="submit" value="Create Project" class="btn btn-primary" />
                     </div>
                 }
                 else
@@ -311,7 +317,7 @@
                         <span asp-validation-for="CreatedByID" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" disabled />
+                        <input type="submit" value="Create Project" class="btn btn-primary" disabled />
                     </div>
                 }
             </form>
