@@ -15,10 +15,11 @@ namespace HomeImprovement3._0.Models
         public string Name { get; set; }
         public string Type { get; set; }
 
-        [Display(Name = "Created")]
+        [Display(Name = "Project Date")]
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
         
+
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Cost { get; set; }
     }
