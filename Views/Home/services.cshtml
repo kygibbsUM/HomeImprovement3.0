@@ -252,6 +252,7 @@
                         var floorBoxes = parseInt(Math.ceil(floorArea / floorCoverage));
                         var floorPrice = 30; //This will get pulled from whatever we used to set the price per box.
                         let total = parseFloat(floorBoxes * floorPrice);
+                        total.toFixed(2);
                         let totalBox = document.getElementById("totalBox");
                         totalBox.value = total;
                         totalBox.readOnly = true;
@@ -266,6 +267,7 @@
                         var paintCans = parseInt(Math.ceil(paintArea / paintCoverage));
                         var paintPrice = 24.97;
                         let total = parseFloat(paintPrice * paintCans);
+                        total.toFixed(2);
 
                         let totalBox = document.getElementById("totalBox");
                         totalBox.value = total;
@@ -290,6 +292,7 @@
                         var roofArea = parseFloat(roofLength * roofWidth * roofPitch);
                         var shingleBundles = parseInt(Math.ceil(roofArea / shingleCoverage));
                         let total = shingleBundles * roofPrice;
+                        total.toFixed(2);
 
                         let totalBox = document.getElementById("totalBox");
                         totalBox.value = total;
