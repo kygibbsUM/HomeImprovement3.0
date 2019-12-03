@@ -786,7 +786,7 @@ ul.social-network {
     font-size: 20px;
     font-weight: 600;
     color: rgb(8, 164, 255);
-    ;
+    
 }
 
 /* --- portfolio --- */
@@ -1524,7 +1524,7 @@ label {
     height: 100%;
     /*Image only BG fallback*/
     /*background = gradient + image pattern combo*/
-    background: linear-gradient(rgba(1, 106, 255, 0.39), rgba(218, 68, 41, 0.33));
+    background: linear-gradient(#DEDEDE, #F1F1F1);
 }
 
 
