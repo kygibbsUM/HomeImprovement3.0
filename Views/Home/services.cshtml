@@ -37,27 +37,27 @@
 
             <div class="card-deck">
                 <div class="card">
-                    <img class="card-img-top" src="~/images/blog/gallery4.png" alt="Card image cap">
+                    <img class="card-img-top" src="~/images/portfolio/recent/item2.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Save Time!</h5>
                         <p class="card-text">No need to waste time making all the calls. We know your time is precious!</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted">Last updated 30 mins ago</small></p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="~/images/portfolio/recent/item9.png" alt="Card image cap">
+                    <img class="card-img-top" src="~/images/portfolio/recent/item4.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">All Online!</h5>
                         <p class="card-text">One click and you get the ultimate price.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted">Last updated 23 mins ago</small></p>
                     </div>
                 </div>
                 <div class="card">
                     <img class="card-img-top" src="~/images/portfolio/recent/item7.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">THe best consulation!</h5>
+                        <h5 class="card-title">Easy and Efficient!</h5>
                         <p class="card-text">Your home is our work and we take it seriously!</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted">Last updated 4 mins ago</small></p>
                     </div>
                 </div>
             </div>
@@ -74,9 +74,13 @@
 
     <!-- This is the Calculator ZONE-->
     <div class="row">
-        <div class="col-md-4 col-centered" id="calchtml">
+        <div class="col-md-10 col-centered" id="calchtml">
             <form asp-controller="Projects" asp-action="Create">
+                <div class="form-text">
+                   <h1>Home Improvement Calculator<span class="label label-primary"> Get Started!</span></h1>
+                </div>
                 <div class="form-group">
+
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" placeholder="Project Name" />
                     <span asp-validation-for="Name" class="text-danger"></span>
@@ -320,7 +324,7 @@
     @*//< !--This is start of the Pricing-- >*@
     <div class="price">
         <div class="pricing-wrapper clearfix">
-            <h1 class="pricing-table-title">Get Started with Premium Features </h1>
+            <h2 class="pricing-table-title">Get Started with Premium Features </h2>
 
             <div class="pricing-table">
                 <h3 class="pricing-title">Basic</h3>
